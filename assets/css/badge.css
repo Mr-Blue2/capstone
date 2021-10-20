@@ -1,0 +1,29 @@
+#lblCartCount {
+  font-size: 10px;
+  background: #ff0000;
+  color: #fff;
+  /*padding: 0 5px;*/
+  vertical-align: bottom;
+  /*margin-right: -10px;*/
+}
+
+#lblHomeCount {
+  font-size: 10px;
+  background: #ff0000;
+  color: #fff;
+  /*padding: 0 5px;*/
+  vertical-align: bottom;
+  /*margin-right: -10px;*/
+}
+.fudge {
+padding-left: 9px;
+padding-right: 9px;
+-webkit-border-radius: 100%;
+-moz-border-radius: 100%;
+border-radius: 100%;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+background-color: #c67605;
+}
