@@ -15,10 +15,10 @@
         }else{
             echo '<option value="">No Course available</option>'; 
         }
-	}
+  	}
 
     /// register
-    if (isset($_FILES['file']['name'])){
+  else  if (isset($_FILES['file']['name'])){
         $bu_email = $_POST['bu_email'];
         $bu_number = $_POST['bu_number'];
         $last_name=$_POST['last_name'];
@@ -242,7 +242,7 @@
       
       //login part
      /// register
-     if (isset($_POST['login_pass'])){
+   else  if (isset($_POST['login_pass'])){
 
         $login_id = $_POST['login_id'];
         $login_pass = $_POST['login_pass'];
@@ -263,7 +263,7 @@
 
     
      //resend code
-     if(isset($_POST['resend_email'])){
+  else   if(isset($_POST['resend_email'])){
         $resend_email =$_POST['resend_email'];
 
         test_input($conn,$resend_email);
@@ -279,7 +279,7 @@
      }
 
       //forgot pass emailing
-      if(isset($_POST['forgot_email'])){
+  else    if(isset($_POST['forgot_email'])){
         $forgot_email =$_POST['forgot_email'];
 
         test_input($conn,$forgot_email);
@@ -293,7 +293,7 @@
 
      //reset pass
    
-    if(isset($_POST['new_email'])){
+  else   if(isset($_POST['new_email'])){
         $new_email=$_POST['new_email'];
         $new_password=$_POST['new_password'];
 
@@ -308,7 +308,11 @@
          }
     }
 
-    //file upload
+  else{
+        header("Location: ../home.php");
+        exit();
+  }
+
 
    
 

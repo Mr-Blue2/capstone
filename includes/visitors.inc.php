@@ -6,7 +6,7 @@
      
     require_once 'email_config.php';
 
-
+  if(isset($_POST['bu_email']))   {
     
      if (isset($_FILES['file']['name'])){
              
@@ -280,7 +280,12 @@ $body= '
     
 
 }else{
-    echo "No file uplaodesd";
+    echo "No file Uploadded";
 }
 
+
+  }else{
+    header("Location: ../home.php");
+    exit();
+  }
 ?>

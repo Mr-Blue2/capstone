@@ -5,6 +5,10 @@ require_once 'db.inc.php';
 session_start();
  $session_user_ref_id= $_SESSION['user_ref_id'];
 
+ if($session_user_ref_id===''){
+    header("Location: ../home.php");
+    exit();
+ }
 
 function  notif_count($conn,$session_user_ref_id){
     $sql= "SELECT IFNULL(COUNT(notif_id),0) as result FROM notification WHERE to_user_ref_id=? and notif_read=0  and notif_type=0 ; ";

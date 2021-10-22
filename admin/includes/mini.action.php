@@ -247,7 +247,7 @@ if (isset($_GET['approve'])) {
 
   
   ///////////////////////////
-if (isset($_GET['not_approve'])) {
+else if (isset($_GET['not_approve'])) {
     $id = $_GET['not_approve'];
  
     $value= getUserDetailsByUserOnly($conn,$id);
@@ -491,7 +491,7 @@ if (isset($_GET['not_approve'])) {
 
   /// delete department
 
-  if(isset($_GET['delete'])){
+ else  if(isset($_GET['delete'])){
     $id= $_GET['delete'];
     $status= 0;
     $stmt = $conn->prepare(' UPDATE department_offices SET do_active=?  WHERE department_offices_id=?');
@@ -503,7 +503,7 @@ if (isset($_GET['not_approve'])) {
 
    /// delete course
 
-   if(isset($_GET['course_delete'])){
+  else  if(isset($_GET['course_delete'])){
     $id= $_GET['course_delete'];
     $status= 0;
     $stmt = $conn->prepare(' UPDATE course SET course_active=?  WHERE course_id=?');
@@ -512,12 +512,19 @@ if (isset($_GET['not_approve'])) {
     header('location:../course.php?status=success');
   }
   
-  if(isset($_GET['deletefaculty'])){
+else   if(isset($_GET['deletefaculty'])){
     $id= $_GET['deletefaculty'];
     $status= 2;
     $stmt = $conn->prepare(' UPDATE user SET  user_accountStatus=?  WHERE user_ref_id=?');
     $stmt->bind_param('is',$status,$id);
     $stmt->execute();
     header('location:../faculty.php?status=success');
+  }
+  else{
+    
+   
+        header("location: ../../home.php");
+        exit();
+  
   }
   

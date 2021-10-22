@@ -23,7 +23,7 @@ require_once ('../../includes/func.inc.php');
 
        
 	}
-	if($_POST["operation"] == "Edit")
+else	if($_POST["operation"] == "Edit")
 	{             
 
                     $id= $_POST['course_id'];
@@ -36,7 +36,13 @@ require_once ('../../includes/func.inc.php');
                     $stmt->bind_param('issi',$type,$code,$desc,$id);
                     $stmt->execute();   
 	}
-
+else{
+    
+    
+        header("location: ../../home.php");
+        exit();
+  
+}
        
         
             

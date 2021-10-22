@@ -31,6 +31,11 @@ if(isset($_POST["course_id"]))
         $output["user_contactNum"] = $row["user_contactNum"]; 
 	}
 	echo json_encode($output);
+}else{
+   
+        header("location: ../../home.php");
+        exit();
+
 }
 
 ?>

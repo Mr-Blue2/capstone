@@ -1,4 +1,20 @@
 <?php
+
+
+
+    //////// session of admin
+    session_start();
+    $session_user_type =$_SESSION['user_type'];
+    //$_SESSION['user_buEmail'];
+    if (is_null( $_SESSION['user_ref_id'])){
+        header("location: ../index.php");
+        exit();
+    }else if($session_user_type!=='A'){
+        header("location: ../index.php");
+        exit();
+    }
+    ///////////////// 
+	
 header('Content-Type: application/json');
 
 require_once ('../../includes/db.inc.php');

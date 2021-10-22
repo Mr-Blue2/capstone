@@ -4,6 +4,9 @@
         session_start();
         $session_user_ref_id= $_SESSION['user_ref_id'];
 
+        if($session_user_ref_id===''){
+            header("Location: ../home.php");
+        }
         $data = array();
         $query = "SELECT a.apt_message,a.apt_mode,a.apt_result,a.apt_all_status,a.apt_ref_id,a.apt_title,Concat(a.apt_scheduleDate, 'T',a.apt_startTime) as start,Concat(a.apt_scheduleDate, 'T',a.apt_endTime) as end 
                         FROM appointment as a JOIN appointment_participants as ap ON a.apt_ref_id=ap.apt_ref_id

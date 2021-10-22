@@ -74,17 +74,10 @@ if (isset($_POST['btn-add'])) {
         }
     }
     
-       
-   
     
-
-    
-
-
-
-
-
-
-    
+}else{
+     
+    header("Location: ../home.php");
+    exit();
 }
 ?>

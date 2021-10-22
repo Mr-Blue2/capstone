@@ -20,7 +20,7 @@ require_once ('../../includes/func.inc.php');
                    $stmt->execute();   
          }
 	}
-	if($_POST["operation"] == "Edit")
+	else if($_POST["operation"] == "Edit")
 
 	{                $id= $_POST['course_id'];
                     $type= $_POST['type'];
@@ -33,6 +33,12 @@ require_once ('../../includes/func.inc.php');
                     $stmt->bind_param('sssisi',$code,$desc,$type,$person_per_day,$email,$id);
                     $stmt->execute();   
 	}
+    else{
+   
+        header("location: ../../home.php");
+        exit();
+ 
+    }
 
        
         

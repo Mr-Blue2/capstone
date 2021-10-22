@@ -28,5 +28,11 @@ if(isset($_POST["course_id"]))
 		// $output["students"] = $row["students"];
 	}
 	echo json_encode($output);
+}else{
+	
+   
+        header("location: ../../home.php");
+        exit();
+   
 }
 ?>

@@ -29,7 +29,7 @@ if (!empty($_POST['type'])) {
 
 
     // departmet course choices
-    if (!empty($_POST['departmentId'])) { 
+   else  if (!empty($_POST['departmentId'])) { 
         
         $departmentId = $_POST['departmentId'];
         $arr= explode(",",$departmentId);
@@ -50,6 +50,13 @@ if (!empty($_POST['type'])) {
         }
        
 	}
+  else{
+   
+        header("location: ../../home.php");
+        exit();
+    
+    
+  }
 
 
 ?>

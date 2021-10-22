@@ -34,7 +34,7 @@ require_once ('../../includes/func.inc.php');
                    $stmt->execute();   
          
 	}
-	if($_POST["operation"] == "Edit")
+else	if($_POST["operation"] == "Edit")
 
 	{          
                 
@@ -58,7 +58,13 @@ require_once ('../../includes/func.inc.php');
                 $stmt->execute();   
                     
 	}
-
+else{
+   
+    
+        header("location: ../../home.php");
+        exit();
+   
+}
     
       
        

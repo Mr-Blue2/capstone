@@ -28,6 +28,10 @@ require_once 'db.inc.php';
     echo json_encode($arr);         
     mysqli_stmt_close($stmt);  
 
+}else{
+     
+    header("Location: ../home.php");
+    exit();
 }
 
 ?>

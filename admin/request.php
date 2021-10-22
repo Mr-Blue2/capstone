@@ -1,4 +1,19 @@
 <?php
+
+
+    //////// session of admin
+    session_start();
+    $session_user_type =$_SESSION['user_type'];
+    //$_SESSION['user_buEmail'];
+    if (is_null( $_SESSION['user_ref_id'])){
+        header("location: ../index.php");
+        exit();
+    }else if($session_user_type!=='A'){
+        header("location: ../index.php");
+        exit();
+    }
+    ///////////////// 
+
     require_once ('../includes/db.inc.php');
     $connect="mysql:host={$db_servername};dbname={$db_name}";
     $connection = new PDO($connect , $db_username, $db_password );

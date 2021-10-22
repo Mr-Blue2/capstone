@@ -29,6 +29,12 @@ if(isset($_POST["course_id"]))
 		
 	}
 	echo json_encode($output);
+}else{
+
+
+        header("location: ../../home.php");
+        exit();
+   
 }
 
 ?>

@@ -268,6 +268,12 @@ $subject='Cancelled by Admin:'.$apt_title;
 
   
 
+ }else{
+  
+        header("location: ../../home.php");
+        exit();
+    
+  
  }
 
 

@@ -18,7 +18,7 @@ if(isset($_GET["query"])) {
       echo json_encode($data);
 }
 
-if(isset($_POST['recipient'])){
+else if(isset($_POST['recipient'])){
 
      session_start();
      $session_user_ref_id = $_SESSION['user_ref_id'];
@@ -291,7 +291,7 @@ if(isset($_POST['recipient'])){
 
 // goig to the appt
 
-  if(isset($_POST['going_id'])){
+ else  if(isset($_POST['going_id'])){
       $going_id=$_POST['going_id'];
       $id_arr= explode("s",$going_id);
 
@@ -565,7 +565,7 @@ foreach($details as $val){
 
   // not going
 
-  if(isset($_POST['not_going_id'])){
+else   if(isset($_POST['not_going_id'])){
       $not_going_id=$_POST['not_going;_id'];
    
      
@@ -868,7 +868,7 @@ foreach($details as $val){
 
   // cancel
 
-  if(isset($_POST['cancel_id'])){
+else   if(isset($_POST['cancel_id'])){
      $cancel_id=$_POST['cancel_id'];
      cancel($conn,$cancel_id,$status=1);
      $arr=getAptPartcipants($conn,$cancel_id);
@@ -1133,7 +1133,7 @@ foreach($details as $val){
 
 
   //noote
-  if(isset($_POST['note_id'])){
+ else  if(isset($_POST['note_id'])){
     $note_id=$_POST['note_id'];
    
     $id_arr= explode("s",$note_id);
@@ -1159,7 +1159,7 @@ foreach($details as $val){
 
 
 
-if(isset($_POST['view_id'])){
+else if(isset($_POST['view_id'])){
    $apt_ref_id= $_POST['view_id'];
 
    $arr=getAptDetails($conn,$apt_ref_id);
@@ -1179,6 +1179,10 @@ if(isset($_POST['view_id'])){
 
 
      
+}else{
+   
+  header("Location: ../home.php");
+  exit();
 }
 
 
